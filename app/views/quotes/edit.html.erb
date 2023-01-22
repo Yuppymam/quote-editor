@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; 一覧に戻る"), quote_path(@quote) %>
+
+  <div class="header">
+    <h1>見積もりの編集</h1>
+  </div>
+
+  <%= render "form", quote: @quote %>
+</main>

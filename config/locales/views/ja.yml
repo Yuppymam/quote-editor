@@ -1,0 +1,13 @@
+ja:
+  helpers:
+    submit:
+      quote:
+        create: 見積もりを作成
+        update: 見積もりを更新
+  simple_form:
+    labels:
+      quote:
+        name: "名前"
+    placeholders:
+      quote:
+        name: 見積もりのタイトル

@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      quote: 見積もり
+    attributes:
+      quote:
+        name: 名前

@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>見積もり一覧</h1>
+    <%= link_to "見積もりを作成",
+                new_quote_path,
+                class: "btn btn--primary" %>
+  </div>
+
+  <%= render @quotes %>
+</main>
