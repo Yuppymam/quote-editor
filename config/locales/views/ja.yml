@@ -2,7 +2,7 @@ ja:
   helpers:
     submit:
       quote:
-        create: 見積もりを作成
+        create: 作成する
         update: 見積もりを更新
   simple_form:
     labels:
