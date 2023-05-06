@@ -18,7 +18,7 @@ class QuotesController < ApplicationController
     if @quote.save
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: "見積もりを作成しました" }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = "見積もりを作成しました" }
       end
     else
       render :new, status: :unprocessable_entity
@@ -30,9 +30,12 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, notice: "見積もりを更新しました"
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: "見積もりを更新しました" }
+        format.turbo_stream { flash.now[:notice] = "見積もりを更新しました" }
+      end
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -40,7 +43,7 @@ class QuotesController < ApplicationController
     @quote.destroy
     respond_to do |format|
       format.html { redirect_to quotes_path, notice: "見積もりを削除しました" }
-      format.turbo_stream
+      format.turbo_stream { flash.now[:notice] = "見積もりを削除しました" }
     end
   end
 
